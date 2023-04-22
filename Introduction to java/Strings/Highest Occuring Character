@@ -45,3 +45,50 @@ Sample Output 2:
 
 x
 
+#Solution
+
+
+public class Solution {
+
+	public static char highestOccuringChar(String str) {
+		//Your code goes here
+
+
+		int [] arr = new int [127];
+     for(int i=0;i<str.length();i++){
+        arr[str.charAt(i)]=arr[str.charAt(i)]+1;
+     }
+     int max = -1;
+     char c=' ';
+
+     for(int i=0;i<str.length();i++){
+        if(max<arr[str.charAt(i)]){
+
+            max=arr[str.charAt(i)];
+            c=str.charAt(i);
+        }
+     }
+	 return c;
+		// int c1 = 0, c2 = 0, i, j;
+		// char maxChar = '\0';
+		// j = 0;
+		// while (j < str.length()) {
+		// 	i = 0;
+		// 	do {
+		// 		if (str.charAt(i) == str.charAt(j)) {
+		// 			c2++;
+		// 		}
+		// 		i++;
+		// 	} while (i < str.length());
+		// 	if (c2 > c1) {
+		// 		maxChar = str.charAt(j);
+		// 		c1 = c2;
+		// 	}
+		// 	c2 = 0;
+		// 	j++;
+		// }
+		// return maxChar;
+			
+	}
+
+}
